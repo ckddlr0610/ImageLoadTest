@@ -9,22 +9,12 @@
         android:id="@+id/GlideFragment"
         android:name="kr.com.imageloadingtest.GlideFragment"
         android:label="@string/glide_fragment_label"
-        tools:layout="@layout/fragment_glide">
-
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_glide"/>
     <fragment
         android:id="@+id/SecondFragment"
         android:name="kr.com.imageloadingtest.GlideListPictureFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/GlideFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_ficasso"/>
     <fragment
         android:id="@+id/MainFragment"
         android:name="kr.com.imageloadingtest.MainFragment"

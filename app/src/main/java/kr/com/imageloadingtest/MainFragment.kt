@@ -41,5 +41,3 @@ class MainFragment : Fragment() {
         )
     }
 }
-
-
