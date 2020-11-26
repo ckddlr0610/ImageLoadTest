@@ -3,11 +3,13 @@ package kr.com.imageloadingtest
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import kr.com.imageloadingtest.databinding.ItemTestListBinding
+import kr.com.imageloadingtest.model.LoaderType
 
 class MainAdapter(
-    private val list: List<String>
+    private val list: List<LoaderType>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MainViewHolder(
@@ -29,8 +31,24 @@ class MainAdapter(
     class MainViewHolder(
         private val binding: ItemTestListBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: String) {
+
+        fun bind(item: LoaderType) {
             binding.item = item
+            binding.root.setOnClickListener {
+                when(item) {
+                    LoaderType.GLIDE ->
+                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_FirstFragment)
+
+                    LoaderType.PICASSO ->
+                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_FirstFragment)
+
+                    LoaderType.COIL ->
+                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_FirstFragment)
+
+                    LoaderType.FRESCO ->
+                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_FirstFragment)
+                }
+            }
         }
     }
 }

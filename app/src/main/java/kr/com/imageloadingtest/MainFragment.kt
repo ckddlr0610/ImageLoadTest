@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import kr.com.imageloadingtest.databinding.FragmentMainBinding
+import kr.com.imageloadingtest.model.LoaderType
 
 class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
@@ -31,8 +32,13 @@ class MainFragment : Fragment() {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }
 
-    private fun getTestList(): List<String> {
-        return listOf<String>("OneFicture", "GlideList")
+    private fun getTestList(): List<LoaderType> {
+        return listOf(
+                LoaderType.GLIDE,
+                LoaderType.PICASSO,
+                LoaderType.COIL,
+                LoaderType.FRESCO
+        )
     }
 }
 
