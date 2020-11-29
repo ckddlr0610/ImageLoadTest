@@ -21,7 +21,7 @@
         android:label="@string/main_fragment_label"
         tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/action_MainFragment_to_FirstFragment"
+            android:id="@+id/action_MainFragment_to_GlideFragment"
             app:destination="@id/GlideFragment" />
         <action
             android:id="@+id/action_MainFragment_to_SecondFragment"

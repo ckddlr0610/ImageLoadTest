@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_glide"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainFragment">
@@ -31,11 +32,11 @@
             app:title="@{`Glide`}" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_fragment_main"
+            android:id="@+id/rv_fragment_gilde"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginVertical="16dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/_end_guide"
             app:layout_constraintStart_toStartOf="@id/_start_guide"

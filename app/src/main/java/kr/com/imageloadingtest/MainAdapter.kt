@@ -1,7 +1,6 @@
 package kr.com.imageloadingtest
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -37,16 +36,16 @@ class MainAdapter(
             binding.root.setOnClickListener {
                 when(item) {
                     LoaderType.GLIDE ->
-                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_FirstFragment)
+                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_GlideFragment)
 
                     LoaderType.PICASSO ->
-                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_FirstFragment)
+                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_GlideFragment)
 
                     LoaderType.COIL ->
-                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_FirstFragment)
+                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_GlideFragment)
 
                     LoaderType.FRESCO ->
-                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_FirstFragment)
+                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_GlideFragment)
                 }
             }
         }
