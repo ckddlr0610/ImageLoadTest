@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.orhanobut.logger.Logger
 import kr.com.imageloadingtest.databinding.ItemImageBinding
 
 class ImageAdapter(
@@ -22,8 +23,11 @@ class ImageAdapter(
         return list.size
     }
 
+    //FIXME: 캐싱은 어떻게 테스트 해볼 수 있을지?
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as ImageViewHolder).bind(list[position])
+        if (position == 0) Logger.d("first Load! + " + System.currentTimeMillis())
+        if (position == itemCount-1) Logger.d("last Load! + " + System.currentTimeMillis())
     }
 
     class ImageViewHolder(

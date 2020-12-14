@@ -10,6 +10,9 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.orhanobut.logger.Logger
 import kr.com.imageloadingtest.databinding.FragmentGlideBinding
 import kr.com.imageloadingtest.databinding.FragmentMainBinding
@@ -22,7 +25,6 @@ class GlideFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        Logger.d("startImageLoad" + System.currentTimeMillis())
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_glide, container, false)
 
         return binding.root
@@ -31,19 +33,8 @@ class GlideFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rvFragmentGilde.adapter =
-                ImageAdapter(ImageList().images)
+        val adapter = ImageAdapter(ImageList().images)
 
-        binding.rvFragmentGilde
-                .viewTreeObserver
-                .addOnGlobalLayoutListener (object : ViewTreeObserver.OnGlobalLayoutListener {
-                    override fun onGlobalLayout() {
-                        Toast.makeText(requireContext(), "로드 완료", Toast.LENGTH_LONG).show()
-
-                        binding.rvFragmentGilde
-                                .viewTreeObserver
-                                .removeOnGlobalLayoutListener(this)
-                    }
-                })
+        binding.rvFragmentGilde.adapter = adapter
     }
 }

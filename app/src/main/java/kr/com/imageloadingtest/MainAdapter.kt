@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.orhanobut.logger.Logger
 import kr.com.imageloadingtest.databinding.ItemTestListBinding
 import kr.com.imageloadingtest.model.LoaderType
 
