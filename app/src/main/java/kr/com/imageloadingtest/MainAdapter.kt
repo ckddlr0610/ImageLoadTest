@@ -43,7 +43,7 @@ class MainAdapter(
                         binding.root.findNavController().navigate(R.id.action_MainFragment_to_GlideFragment)
 
                     LoaderType.COIL ->
-                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_GlideFragment)
+                        binding.root.findNavController().navigate(R.id.action_MainFragment_to_CoilFragment)
 
                     LoaderType.FRESCO ->
                         binding.root.findNavController().navigate(R.id.action_MainFragment_to_GlideFragment)

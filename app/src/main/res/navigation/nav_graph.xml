@@ -16,6 +16,11 @@
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_ficasso"/>
     <fragment
+        android:id="@+id/CoilFragment"
+        android:name="kr.com.imageloadingtest.CoilFragment"
+        android:label="CoilFragment"
+        tools:layout="@layout/fragment_coil"/>
+    <fragment
         android:id="@+id/MainFragment"
         android:name="kr.com.imageloadingtest.MainFragment"
         android:label="@string/main_fragment_label"
@@ -26,5 +31,8 @@
         <action
             android:id="@+id/action_MainFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_CoilFragment"
+            app:destination="@id/CoilFragment" />
     </fragment>
 </navigation>
